@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Toggle focused column full-width, tracked per window address
+# Restores to DEFAULT_WIDTH when toggled off
+
+DEFAULT_WIDTH="0.5"  # Change this to match your scrolling:column_width setting
+STATE_DIR="/tmp/hypr_fullcol"
+mkdir -p "$STATE_DIR"
+
+ADDR=$(hyprctl activewindow -j | jq -r '.address')
+
+if [ -z "$ADDR" ] || [ "$ADDR" = "null" ]; then
+    exit 1
+fi
+
+STATE_FILE="$STATE_DIR/$ADDR"
+
+MONITOR=$(hyprctl activewindow -j | jq '.monitor')
+WIN_W=$(hyprctl activewindow -j | jq '.size[0]')
+
+MON_INFO=$(hyprctl monitors -j | jq ".[] | select(.id == $MONITOR)")
+MON_W=$(jq '.width' <<< "$MON_INFO")
+SCALE=$(jq '.scale' <<< "$MON_INFO")
+
+LOGICAL_W=$(awk "BEGIN { print $MON_W / $SCALE }")
+
+if (( WIN_W * 100 > LOGICAL_W * 80 )); then
+    hyprctl dispatch 'hl.dsp.layout("colresize -conf")'
+    hyprctl dispatch 'hl.dsp.layout("colresize -conf")'
+    hyprctl dispatch 'hl.dsp.layout("colresize -conf")'
+
+    hyprctl dispatch 'hl.dsp.layout("focus l")'
+    hyprctl dispatch 'hl.dsp.layout("focus r")'
+
+    rm "$STATE_FILE"
+else
+    hyprctl dispatch 'hl.dsp.layout("fit active")'
+    touch "$STATE_FILE"
+fi
