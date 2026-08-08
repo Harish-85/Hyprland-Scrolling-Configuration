@@ -7,8 +7,7 @@ hl.env("QT_QPA_PLATFORMTHEME","kde")
 
 -- xwayalnd
 -- hl.env("GDK_SCALE","2")
-hl.env("LANG","en_US.UTF-8")
-hl.env("LC_ALL","en_US.UTF-8")
+
 -- DMS_STARTUP_BEGIN
 hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
@@ -29,7 +28,6 @@ hl.config({
 			tap_to_click = true,
 			natural_scroll = true,
 		},
-	--	window_direction_monitor_fallback = false,
 	},
 	general = {
 		gaps_in = 5,
@@ -70,15 +68,7 @@ hl.config({
 	xwayland = {
 		force_zero_scaling = true
 	},
-	binds = {
-		window_direction_monitor_fallback = false,
-	},
 })
-
-
--- Option B: Direct key assignment (depending on your setup structure)
---hl.config.binds.window_direction_monitor_fallback = false
-
 
 hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "default" })
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "default" })

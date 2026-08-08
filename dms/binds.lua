@@ -13,6 +13,8 @@ hl.bind("SUPER + Y", hl.dsp.exec_cmd("dms ipc call dash toggle wallpaper"))
 hl.bind("SUPER + TAB", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
 hl.bind("SUPER + O", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
 hl.bind("SUPER + X", hl.dsp.exec_cmd("dms ipc call powermenu toggle"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("zen-browser"))
+
 
 -- === Cheat sheet
 hl.bind("SUPER + SHIFT + Slash", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland"))
@@ -36,7 +38,7 @@ hl.bind("SUPER + SHIFT + ESCAPE",hl.dsp.exec_cmd("hyprctl kill"))
 -- Unmute the system microphone when Left Alt is pressed
 --hl.bind("ALT_L", hl.notification.send("microphone","Active",{ icon = 0, timeout = 1000 }))
 
-hl.bind("v", hl.dsp.pass({ window = "class:^(vesktop)$" }),{non_consuming=true})
+hl.bind("F1", hl.dsp.pass({ window = "class:^(vesktop)$" }),{non_consuming=true})
 
 -- Mute the system microphone when Left Alt is released
 --hl.bind("F2", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_SOURCE@ 1"), { release = true })
