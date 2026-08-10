@@ -29,7 +29,9 @@ hl.config({
 			tap_to_click = true,
 			natural_scroll = true,
 		},
-	--	window_direction_monitor_fallback = false,
+	--	window_direction_monitor_fallback = false
+	--	sensitivity = 0.1,
+		accel_profile = "flat"
 	},
 	general = {
 		gaps_in = 5,
@@ -53,6 +55,7 @@ hl.config({
 			offset = "0 5",
 			color = "rgba(00000070)",
 		},
+	
 	},
 	misc = {
 		disable_hyprland_logo = true,
@@ -73,6 +76,10 @@ hl.config({
 	binds = {
 		window_direction_monitor_fallback = false,
 	},
+	cursor = {
+		no_hardware_cursors = true,
+	},
+
 })
 
 
