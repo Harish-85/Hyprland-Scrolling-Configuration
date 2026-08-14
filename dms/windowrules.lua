@@ -17,4 +17,4 @@ hl.window_rule({ match = { class = "^(steam_app_.*|steam_proton|streaming_client
 hl.window_rule({ match = { class = "^com.github.th-ch.youtube-music$" }, opacity = 0.99 })
 
 -- DMS-RULE: id=wr_1786348475231539914, name=Unity
-hl.window_rule({ match = { class = "^Unity$", title = "^Unity$" }, float = true, no_focus = true })
+hl.window_rule({ match = { class = "^Unity$", title = "^Unity$" }, float = true, no_initial_focus = true })

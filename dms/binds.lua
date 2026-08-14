@@ -38,7 +38,7 @@ hl.bind("SUPER + SHIFT + ESCAPE",hl.dsp.exec_cmd("hyprctl kill"))
 -- Unmute the system microphone when Left Alt is pressed
 --hl.bind("ALT_L", hl.notification.send("microphone","Active",{ icon = 0, timeout = 1000 }))
 
-hl.bind("F1", hl.dsp.pass({ window = "class:^(vesktop)$" }),{non_consuming=true})
+hl.bind("grave", hl.dsp.pass({ window = "class:^(vesktop)$" }),{non_consuming=true})
 
 -- Mute the system microphone when Left Alt is released
 --hl.bind("F2", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_SOURCE@ 1"), { release = true })

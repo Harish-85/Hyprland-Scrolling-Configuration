@@ -79,6 +79,10 @@ hl.config({
 	cursor = {
 		no_hardware_cursors = true,
 	},
+	render = {
+        	cm_enabled = true,
+	        cm_auto_hdr = 1, -- 1: switch to cm, hdr; 2: switch to cm, hdredid
+    },
 
 })
 
