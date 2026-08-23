@@ -172,6 +172,7 @@ hl.bind("SUPER + CTRL + F", hl.dsp.window.fullscreen({ mode = "maximized", actio
 
 -- === Move/resize windows with mainMod + LMB/RMB and dragging ===
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true, description = "Move window" })
+-- hl.bind("mouse:276", hl.dsp.window.drag(), { mouse = true, description = "Move window" })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true, description = "Resize window" })
 
 hl.bind("SUPER + code:20", hl.dsp.window.resize({ x = -100, y = 0, relative = true }), { description = "Expand window left" })

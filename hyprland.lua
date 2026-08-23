@@ -25,6 +25,8 @@ hl.config({
 		kb_layout = "",
 		numlock_by_default = true,
 		follow_mouse = 2,
+		float_switch_override_focus = 0,
+
 		touchpad = {
 			tap_to_click = true,
 			natural_scroll = true,
