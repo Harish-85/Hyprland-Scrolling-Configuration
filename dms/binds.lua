@@ -63,18 +63,19 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd([[dms ipc call brightness decre
 
 -- === Window Management ===
 hl.bind("SUPER + Q", hl.dsp.window.close())
--- hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
-hl.bind("SUPER + F", hl.dsp.exec_cmd("~/.config/hypr/scripts/full-width"))
+--hl.bind("SUPER + F", hl.dsp.window.fullscreen_state({internal=1,client=0,action="toggle", layout_aware=true}))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle", layout_aware=true }))
+--hl.bind("SUPER + F", hl.dsp.exec_cmd("~/.config/hypr/scripts/full-width"))
 hl.bind("SUPER + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind("SUPER + SHIFT + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + W", hl.dsp.group.toggle())
 hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("dms ipc call window-rules toggle"))
 
 -- === Focus Navigation ===
-hl.bind("SUPER + left", hl.dsp.focus({ direction = "l" }))
+hl.bind("SUPER + left", hl.dsp.layout("focus l"))
 hl.bind("SUPER + down", hl.dsp.focus({ direction = "d" }))
 hl.bind("SUPER + up", hl.dsp.focus({ direction = "u" }))
-hl.bind("SUPER + right", hl.dsp.focus({ direction = "r" }))
+hl.bind("SUPER + right", hl.dsp.layout("focus r"))
 hl.bind("SUPER + H", hl.dsp.focus({ direction = "l" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "d" }))
 hl.bind("SUPER + K", hl.dsp.focus({ direction = "u" }))

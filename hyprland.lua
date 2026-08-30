@@ -26,6 +26,7 @@ hl.config({
 		numlock_by_default = true,
 		follow_mouse = 2,
 		float_switch_override_focus = 0,
+		mouse_refocus=false,
 
 		touchpad = {
 			tap_to_click = true,
@@ -43,8 +44,9 @@ hl.config({
 	},
 	scrolling = {
 		fullscreen_on_one_column = false,
-		column_width=.5,
-		explicit_column_widths = ".33333, .5, .6666666"
+--		column_width=.3,
+		column_width = .33333,
+		explicit_column_widths = ".33333, .5, .66666"
 	},
 	decoration = {
 		rounding = 12,
@@ -62,6 +64,8 @@ hl.config({
 	misc = {
 		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
+		focus_on_activate = true,
+
 	},
 	debug = {
 		vfr = false,
@@ -73,7 +77,8 @@ hl.config({
 		mfact = 0.5,
 	},
 	xwayland = {
-		force_zero_scaling = true
+		force_zero_scaling = true,
+		use_nearest_neighbor = false,
 	},
 	binds = {
 		window_direction_monitor_fallback = false,

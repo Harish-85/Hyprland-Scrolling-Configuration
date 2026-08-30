@@ -8,11 +8,8 @@ hl.config({
 		resize_on_border = true,
 	},
 	decoration = {
-		rounding = 6,
+		rounding = 12,
 	},
 })
 
-hl.layer_rule({
-	match = { namespace = "^dms:bar$" },
-	xray = true,
-})
+-- bar-xray off
